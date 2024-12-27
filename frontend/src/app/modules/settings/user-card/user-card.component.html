@@ -1,0 +1,15 @@
+<div class="user-card">
+    <div class="user-card-top"></div>
+
+    <div class="avatar-container">
+        <div class="avatar">
+            <app-avatar [imgLink]="user.avatarUrl" [userName]="user.firstName + ' ' + user.lastName"
+                size="44"></app-avatar>
+        </div>
+    </div>
+
+    <div class="user-name"><span class="user-name-content">{{ user.firstName }}&nbsp;{{ user.lastName }}</span></div>
+    <div class="user-email">{{ user.email }}</div>
+
+    <a class="link-remove" *ngIf="isRemoveAvailable" (click)="handleClick()">Remove</a>
+</div>

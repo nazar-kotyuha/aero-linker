@@ -1,0 +1,67 @@
+@import "/src/styles/color"
+
+.sidebar
+    width: 79px
+    height: 100%
+    background-color: $primary-color
+    position: fixed
+    top: 0
+    left: 0
+    z-index: 1000
+
+    .logo
+        width: 54px
+        height: 54px
+
+    .folder-icon, .bell-icon
+        width: 22px
+        height: 22px
+        padding: 2px
+
+    .bell-icon
+        padding: 0 1px
+
+    .folder-icon
+        padding: 2px 0
+
+    .account-icon
+        width: 24px
+        height: 24px
+
+    .download-icon
+        width: 25px
+        height: 25px
+
+.tab
+    display: flex
+    justify-content: center
+    padding: 20px 0
+    cursor: pointer
+
+.nav
+    position: relative
+
+    &:after
+        content: ""
+        display: none
+        position: absolute
+        top: 10%
+        left: 0
+        height: 80%
+        width: 5px
+        border-radius: 5px
+        background-color: $white
+
+    &:hover
+        &:after
+            display: block
+
+.active
+    &:after
+        display: block
+
+.nav-container
+    height: calc(100% - 100px)
+    display: flex
+    flex-direction: column
+    justify-content: space-between

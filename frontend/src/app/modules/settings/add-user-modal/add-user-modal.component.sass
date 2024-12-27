@@ -1,0 +1,35 @@
+@import "/src/styles/reusable"
+
+.container
+    display: flex
+    flex-direction: column
+    height: 100%
+
+.content
+    display: flex
+    flex-direction: column
+    height: 100%
+    justify-content: space-between
+
+.header
+    @extend .modal-header
+
+.header-title
+    @extend .modal-title
+
+.dropdown-users
+    height: 270px
+    overflow-y: auto
+
+.user-container
+    display: flex
+    align-items: center
+    height: 100%
+
+    app-avatar
+        margin-right: 5px
+        margin-bottom: 8px
+
+.action-buttons
+    display: flex
+    margin-top: 10px

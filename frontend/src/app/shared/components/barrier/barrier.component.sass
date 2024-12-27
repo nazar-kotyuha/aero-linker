@@ -1,0 +1,23 @@
+@import "/src/styles/color"
+@import "/src/styles/weights"
+
+.barrier
+    height: 20px
+    position: relative
+    margin: 30px auto 0 auto
+
+    .rule
+        border: 1px solid $light-gray
+
+.barrier-text
+    position: absolute
+    margin: 0
+    padding: 0 4px
+    top: -50%
+    left: 50%
+    transform: translateX(-50%)
+    background-color: $white
+
+    color: $light-gray
+    font-size: 18px
+    font-weight: $medium-weight

@@ -1,0 +1,20 @@
+<div class="container">
+    <div class="main-content">
+        <app-tree-one [treeData]="items" (selectionOne)="selectionChanged($event)"></app-tree-one>
+        <div class="changes-content">
+            <!--app-code-editor
+                *ngIf="selectedContent"
+                [formControl]="$any(form.controls['scriptContent'])"
+                [readOnly]="true"
+                [name]="
+                    DatabaseItemTypeName[selectedContent.itemType] +
+                    ': ' +
+                    selectedContent.schemaName +
+                    '.' +
+                    selectedContent.itemName
+                ">
+            </app-code-editor-->
+            <app-log-map></app-log-map>
+        </div>
+    </div>
+</div>

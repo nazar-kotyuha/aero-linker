@@ -1,0 +1,40 @@
+<div class="registration-container">
+    <div class="registration-content">
+        <h4 class="registration-heading">Sign Up</h4>
+
+        <div class="additional-sing-up">
+            <app-google-button authType="signup_with"></app-google-button>
+        </div>
+
+        <app-barrier [text]="'or'"></app-barrier>
+
+        <form [formGroup]="registerForm" (ngSubmit)="registerForm.valid && register()" class="registration-form"
+            action="">
+            <app-input class="input username" [formControl]="$any(registerForm.controls['username'])"
+                [label]="'username'" placeholder="Enter your Username">
+            </app-input>
+            <app-input class="input email" [formControl]="$any(registerForm.controls['email'])" [label]="'email'"
+                placeholder="Enter your Email">
+            </app-input>
+            <app-input class="input first-name" [formControl]="$any(registerForm.controls['firstName'])"
+                [label]="'first Name'" placeholder="Enter your FirstName">
+            </app-input>
+            <app-input class="input last-name" [formControl]="$any(registerForm.controls['lastName'])"
+                [label]="'last Name'" placeholder="Enter your LastName">
+            </app-input>
+            <app-input class="input password" [formControl]="$any(registerForm.controls['password'])"
+                [label]="'password'" [type]="'password'" placeholder="Enter your Password">
+            </app-input>
+            <app-input class="input confirm-password" [formControl]="$any(registerForm.controls['confirmPassword'])"
+                [label]="'confirm Password'" [type]="'password'" placeholder="Enter your Password again">
+            </app-input>
+
+            <app-button class="margin-top" [isDisabled]="registerForm.invalid" text="Sing Up" variant="filled"
+                width="100%">
+            </app-button>
+        </form>
+    </div>
+
+    <div class="registration-footer margin-top">Already have account? <a class="login-link" routerLink="/login">Sign
+            In</a></div>
+</div>

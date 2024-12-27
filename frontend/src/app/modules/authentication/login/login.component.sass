@@ -1,0 +1,55 @@
+@import "/src/styles/color"
+@import "/src/styles/reusable"
+@import "/src/styles/weights"
+
+.login-container
+    min-width: 305px
+    height: 100%
+    padding: 0 20%
+    @extend .flex-column
+    align-items: center
+    justify-content: center
+
+.input
+    @extend .input-errors-padding
+
+.login-content
+    width: 100%
+    min-width: 275px
+    max-width: 400px
+
+    .login-heading
+        font-size: 24px
+        @extend .title
+
+.additional-sing-in
+    @extend .flex-column
+    gap: 10px
+
+.login-form
+    @extend .flex-column
+
+.login-footer
+    margin-bottom: 20px
+    color: $text-light
+    font-size: 14px
+    font-weight: $normal-weight
+
+.link
+    color: $link-color
+
+.input-wrapper
+    position: relative
+
+    .forgot-password-link
+        position: absolute
+        top: 10px
+        right: 0
+
+        font-size: 12px
+        font-weight: 400
+
+.margin-top
+    margin-top: 15px
+
+

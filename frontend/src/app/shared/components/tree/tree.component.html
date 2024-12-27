@@ -1,0 +1,40 @@
+<div class="container-background container" [ngStyle]="{ height: height }">
+    <div class="tree-container">
+        <div class="video-container-wrapper">
+            <div class="video-container">
+                <img #framePlayer>
+                <div *ngIf="noDroneMessage !== null" class="message">{{ noDroneMessage }}</div>
+                <div *ngIf="noVideoMessage !== null && !noDroneMessage" class="message">{{ noVideoMessage }}</div>
+            </div>
+        </div>
+        <div class="directional-buttons">
+            <button class="direction-button up" (mousedown)="startMoving($event, Option.Up)" (mouseup)="stopMoving()"
+                (click)="moveDroneOnClick($event, Option.Up)">
+                <span class="visually-hidden">up</span>
+            </button>
+            <button class="direction-button left" (mousedown)="startMoving($event, Option.Left)"
+                (mouseup)="stopMoving()" (click)="moveDroneOnClick($event, Option.Left)">
+                <span class="visually-hidden">left</span>
+            </button>
+            <button class="direction-button right" (mousedown)="startMoving($event, Option.Right)"
+                (mouseup)="stopMoving()" (click)="moveDroneOnClick($event, Option.Right)">
+                <span class="visually-hidden">right</span>
+            </button>
+            <button class="direction-button down" (mousedown)="startMoving($event, Option.Down)"
+                (mouseup)="stopMoving()" (click)="moveDroneOnClick($event, Option.Down)">
+                <span class="visually-hidden">down</span>
+            </button>
+        </div>
+        <div class="sliders">
+            <label for="speed-slider">Speed</label>
+            <input type="range" id="speed-slider" min="0" max="100" [value]="speed" (input)="updateSpeed($event)">
+            <span id="speed-value">{{ speed }}</span>
+            <label for="altitude-slider">Altitude</label>
+            <input type="range" id="altitude-slider" min="0" max="100" [value]="altitude"
+                (input)="updateAltitude($event)">
+            <span id="altitude-value">{{ altitude }}</span>
+        </div>
+    </div>
+
+</div>
+<app-button text="Disconnect and save flight log" width="100%" (buttonOnClick)="disconnectAndSaveLog()"></app-button>

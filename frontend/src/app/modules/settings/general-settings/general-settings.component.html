@@ -1,0 +1,22 @@
+<div class="edit-project-tab">
+    <div class="edit-tag">Edit project
+    </div>
+
+    <div class="project-name-tag">Project name</div>
+
+    <div class="project-name-input-container">
+        <app-input [formControl]="$any(projectForm.controls['projectName'])"></app-input>
+    </div>
+
+    <div class="project-description-tag">Description</div>
+
+    <div class="project-description-input-container">
+        <app-input [formControl]="$any(projectForm.controls['description'])"></app-input>
+    </div>
+
+    <div class="button-container">
+        <app-button text="Save" width="100%" variant="outline-primary" [isDisabled]="projectForm.invalid"
+                    (buttonOnClick)="onSaveClick()">
+        </app-button>
+    </div>
+</div>

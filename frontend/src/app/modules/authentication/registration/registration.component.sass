@@ -1,0 +1,41 @@
+@import "/src/styles/color"
+@import "/src/styles/reusable"
+@import "/src/styles/weights"
+
+.registration-container
+    min-width: 305px
+    height: 100%
+    padding: 40px 20% 0 20%
+    @extend .flex-column
+    align-items: center
+    justify-content: center
+
+.registration-content
+    width: 100%
+    min-width: 275px
+    max-width: 400px
+    .registration-heading
+        font-size: 24px
+        @extend .title
+
+.input
+    @extend .input-errors-padding
+
+.additional-sing-up
+    @extend .flex-column
+    gap: 10px
+
+.registration-form
+    @extend .flex-column
+
+.registration-footer
+    margin-bottom: 20px
+    color: $text-light
+    font-size: 14px
+    font-weight: $normal-weight
+
+    .login-link
+        color: $link-color
+
+.margin-top
+    margin-top: 15px

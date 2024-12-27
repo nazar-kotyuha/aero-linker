@@ -1,0 +1,15 @@
+<div class="container">
+    <nav>
+        <ul class="navbar-list">
+            <li *ngFor="let navLink of navLinks" class="navbar-item">
+                <a routerLink="{{ navLink.path }}" routerLinkActive="active" class="navbar-link"
+                    *ngIf="navLink.path !== './settings' || (navLink.path === './settings' && isSettingsEnabled)">
+                    {{ navLink.displayName }}
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <div class="right-container">
+
+    </div>
+</div>

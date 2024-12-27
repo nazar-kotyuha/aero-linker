@@ -1,0 +1,25 @@
+<div class="user-info" *ngIf="currentUser">
+    <app-avatar
+        class="avatar"
+        [userName]="currentUser.firstName + ' ' + currentUser.lastName"
+        [imgLink]="currentUser.avatarUrl ? currentUser.avatarUrl : ''"
+        size="36"></app-avatar>
+    <div class="name-email">
+        <p class="user-name">{{ currentUser.firstName }} {{ currentUser.lastName }}</p>
+        <p class="user-email" [appEmailOverflow]="8">{{ currentUser.email }}</p>
+    </div>
+</div>
+<div class="horizontal-separator"></div>
+<button mat-menu-item class="menu-item account" routerLink="/profile">
+    <mat-icon class="icon account-icon" aria-hidden="true">
+        <img src="assets/profile_icon.svg" alt="Edit Profile Icon" />
+    </mat-icon>
+    Edit Profile
+</button>
+<button mat-menu-item class="menu-item logout" (click)="signOut()" (mouseover)="onMouseOver()" (mouseout)="onMouseOut()">
+    <mat-icon class="icon logout-icon">
+        <img [src]="iconSource" alt="Logout Icon" />
+    </mat-icon>
+    Log out
+</button>
+

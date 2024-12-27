@@ -1,0 +1,49 @@
+<div class="header">
+    <h4 class="header-title">Connect to Drone</h4>
+    <app-close-btn (buttonOnClick)="close()"></app-close-btn>
+</div>
+
+<app-barrier></app-barrier>
+<form id="droneForm" [formGroup]="droneForm" (ngSubmit)="addDrone()" class="db-form">
+    <mat-dialog-content>
+        <div class="input-wrapper">
+            <label class="modal-label">Drone Name</label>
+            <app-input [formControl]="$any(droneForm.controls['droneName'])" name="droneName"
+                placeholder="Enter Drone Name">
+            </app-input>
+        </div>
+
+        <app-barrier></app-barrier>
+
+        <div class="input-wrapper">
+            <label class="modal-label">Server Name</label>
+            <app-input class="input" [formControl]="$any(droneForm.controls['serverName'])" name="server name"
+                placeholder="Enter Server name">
+            </app-input>
+        </div>
+
+        <div class="input-wrapper">
+            <label class="modal-label">Port</label>
+            <app-input class="input" [formControl]="$any(droneForm.controls['port'])" placeholder="Enter port">
+            </app-input>
+        </div>
+
+        <div class="input-wrapper">
+            <div class="drop-down-container">
+                <mat-form-field appearance="outline" class="custom-select full-width">
+                    <mat-label for="adapterSelect">Drone Adapter</mat-label>
+                    <mat-select id="adapterSelect" [formControl]="$any(droneForm.controls['adapterType'])">
+                        <mat-option value="0">ExampleAdapter</mat-option>
+                        <!--mat-option value="1">WssAdapter</mat-option-->
+                    </mat-select>
+                </mat-form-field>
+            </div>
+        </div>
+    </mat-dialog-content>
+
+    <div class="modal-footer">
+        <div class="btn-group">
+            <app-button text="Save"></app-button>
+        </div>
+    </div>
+</form>

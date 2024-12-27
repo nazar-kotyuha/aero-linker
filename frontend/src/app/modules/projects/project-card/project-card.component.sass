@@ -1,0 +1,128 @@
+@import "/src/styles/color"
+@import "/src/styles/weights"
+
+$accentColor: $add-button-color
+
+.droneColor
+    $accentColor: $add-button-color
+
+    .side-panel
+        background: $accentColor
+
+    .engine-logo-container
+        background: $accentColor
+
+    .project-tag
+        border: 1.5px $accentColor solid
+        color: $accentColor
+
+.project-card
+    cursor: pointer
+    width: 320px 
+    height: 155px
+    position: relative
+    background-color: white
+    box-shadow: $shadow
+    border-radius: 9px
+
+.side-panel
+    width: 14px
+    height: 100%
+    left: 0
+    background: $accentColor
+    border-radius: 9px 0 0 9px
+
+.engine-logo-container
+    width: 60px
+    height: 45px
+    top: 12px
+    position: absolute
+    display: flex
+    justify-content: center
+    align-items: center
+    background: $accentColor
+    border-radius: 9px
+
+.engine-logo
+    padding-left: 10px
+    min-width: 20px
+    min-height: 20px
+    max-width: 40px
+    max-height: 40px
+    position: relative
+
+.project-name
+    width: 245px
+    left: 70px
+    top: 26px
+    position: absolute
+    color: $text-main
+    font-size: 18px
+    font-weight: $semi-bold-weight
+    white-space: nowrap
+    overflow: hidden
+    text-overflow: ellipsis
+
+.secondary-info-container
+    display: flex
+    justify-content: space-between
+    align-items: center
+    font-size: 12px
+    padding-right: 10px
+    color: $text-main
+
+.project-tag-container
+    height: 40px
+    display: flex
+    align-items: center
+    flex-direction: row
+    position: relative
+    overflow-x: hidden
+
+.project-tag
+    @extend .bold-card-text
+    min-width: 35px
+    max-width: 75px
+    height: 25px
+    border-radius: 10px
+    border: 1.5px $accentColor solid
+    padding: 3px
+    text-align: center
+    margin-right: 3px
+    color: $accentColor
+    overflow: hidden
+    text-overflow: ellipsis
+
+.project-date
+    position: relative
+
+.project-description-container
+    width: 280px
+    left: 32px
+    top: 70px
+    position: absolute
+
+.project-description
+    opacity: 0.5
+    color: $text-main
+    font-size: 12px
+    min-height: 35px
+    display: inline-block
+    white-space: nowrap
+    text-overflow: ellipsis
+    overflow: hidden
+
+    @supports (-webkit-line-clamp: 2)
+        overflow: hidden
+        text-overflow: ellipsis
+        white-space: initial
+        display: -webkit-box
+        -webkit-line-clamp: 2
+        -webkit-box-orient: vertical
+
+.bold-card-text
+    font-size: 12px
+    font-weight: 600
+
+.project-date
+    @extend .bold-card-text
